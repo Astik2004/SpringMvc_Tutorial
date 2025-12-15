@@ -20,7 +20,6 @@ public class EmployeeController {
     public String listEmployee(Model model)
     {
         List<Employee>emp=employeeService.getAllEmployees();
-        System.out.println(emp);
         model.addAttribute("employees",emp);
         return "list-employees";
     }
