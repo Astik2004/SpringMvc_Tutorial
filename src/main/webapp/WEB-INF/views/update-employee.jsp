@@ -1,8 +1,9 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Add Employee</title>
+    <title>Edit Employee</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,7 +54,7 @@
         button {
             width: 100%;
             padding: 12px;
-            background-color: #4CAF50;
+            background-color: #ff9800;
             border: none;
             border-radius: 6px;
             color: white;
@@ -63,7 +64,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #e68a00;
         }
 
         .back-link {
@@ -82,20 +83,23 @@
 <body>
 
 <div class="form-container">
-    <h2>Add Employee</h2>
-    <form action="save" method="post">
+    <h2>Edit Employee</h2>
+    <form action="/employees/save" method="post">
+        <!-- Hidden field for employee id -->
+        <input type="hidden" name="id" value="${employee.id}" />
+
         <label for="name">Name:</label>
-        <input type="text" name="name" id="name" placeholder="Enter name" required />
+        <input type="text" name="name" id="name" value="${employee.name}" required />
 
         <label for="department">Department:</label>
-        <input type="text" name="department" id="department" placeholder="Enter department" required />
+        <input type="text" name="department" id="department" value="${employee.department}" required />
 
         <label for="salary">Salary:</label>
-        <input type="text" name="salary" id="salary" placeholder="Enter salary" required />
+        <input type="text" name="salary" id="salary" value="${employee.salary}" required />
 
-        <button type="submit">Save</button>
+        <button type="submit">Update</button>
     </form>
-    <a href="employees" class="back-link">Back to Employee List</a>
+    <a href="/employees" class="back-link">Back to Employee List</a>
 </div>
 
 </body>
