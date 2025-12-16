@@ -95,7 +95,7 @@
 
         <button type="submit">Save</button>
     </form>
-    <a href="employees" class="back-link">Back to Employee List</a>
+    <a href="/employees" class="back-link">Back to Employee List</a>
 </div>
 
 </body>
