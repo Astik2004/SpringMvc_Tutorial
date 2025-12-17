@@ -24,8 +24,7 @@ public class EmployeeController {
         return "list-employees";
     }
     @GetMapping("/add")
-    public String showAddForm(Model model) {
-        model.addAttribute("employee", new Employee());
+    public String showAddForm() {
         return "add-employee";
     }
     @PostMapping("/save")
